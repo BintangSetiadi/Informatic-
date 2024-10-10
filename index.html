@@ -52,6 +52,14 @@
         button:hover {
             background-color: #45a049;
         }
+        .thank-you-message {
+            display: none;
+            background-color: #4CAF50;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -59,11 +67,11 @@
     <h1>Formulir Pemesanan Kue</h1>
     <p>Jelaskan kue keinginan Anda dan kami akan membuatkannya.</p>
 
-    <form action="#" method="POST" enctype="multipart/form-data">
+    <form id="orderForm" action="#" method="POST" enctype="multipart/form-data">
         
         <div class="form-nama">
             <label for="nama">Nama Anda *</label>
-            <input type="text" id="nama" name="nama" placeholder="Nama Lengkap"required>
+            <input type="text" id="nama" name="nama" placeholder="Nama Lengkap" required>
         </div>
         
         <div class="form-email">
@@ -123,7 +131,7 @@
 
         <div class="form-lokasi">
             <label for="lokasi">Lokasi Pengiriman (Kabupaten/Kota) *</label>
-            <input type="text" id="lokasi" name="lokasi"placeholder="Alamat Lengkap"  required>
+            <input type="text" id="lokasi" name="lokasi" placeholder="Alamat Lengkap" required>
         </div>
 
         <div class="form-gambar">
@@ -148,5 +156,17 @@
         <button type="button" onclick="window.print()">Cetak Formulir</button>
     </form>
 
+    <div class="thank-you-message" id="thankYouMessage">
+        Terimakasih Atas Pemesanan Kuenya!
+    </div>
+
+    <script>
+        // Mencegah pengiriman formulir dan menampilkan pesan terima kasih
+        document.getElementById('orderForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Mencegah pengiriman formulir
+            document.getElementById('thankYouMessage').style.display = 'block'; // Menampilkan pesan terima kasih
+        });
+    </script>
+
 </body>
-</html>
+                </html>
