@@ -52,6 +52,14 @@
         button:hover {
             background-color: #45a049;
         }
+        .thank-you-message {
+            display: none;
+            background-color: #4CAF50;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -59,29 +67,29 @@
     <h1>Formulir Pemesanan Kue</h1>
     <p>Jelaskan kue keinginan Anda dan kami akan membuatkannya.</p>
 
-    <form action="#" method="POST" enctype="multipart/form-data">
+    <form id="orderForm" action="#" method="POST" enctype="multipart/form-data">
         
-        <div class="form-group">
+        <div class="form-nama">
             <label for="nama">Nama Anda *</label>
-            <input type="text" id="nama" name="nama" placeholder="Nama Lengkap"required>
+            <input type="text" id="nama" name="nama" placeholder="Nama Lengkap" required>
         </div>
         
-        <div class="form-group">
+        <div class="form-email">
             <label for="email">E-mail Anda *</label>
             <input type="email" id="email" name="email" placeholder="Email Pribadi" required>
         </div>
         
-        <div class="form-group">
+        <div class="form-kontak">
             <label for="kontak">Nomor Kontak Anda *</label>
             <input type="text" id="kontak" name="kontak" placeholder="Kode Area - Nomor Telepon" required>
         </div>
         
-        <div class="form-group">
+        <div class="form-tanggal">
             <label for="tanggal">Tanggal Dibutuhkan *</label>
             <input type="date" id="tanggal" name="tanggal" required>
         </div>
 
-        <div class="form-group">
+        <div class="form-porsi">
             <label for="ukuran-porsi">Ukuran Porsi *</label>
             <select id="ukuran-porsi" name="ukuran-porsi" required>
                 <option value="" disabled selected>Please Select</option>
@@ -91,7 +99,7 @@
             </select>
         </div>
 
-        <div class="form-group">
+        <div class="form-rasa">
             <label for="rasa">Rasa *</label>
             <select id="rasa" name="rasa" required>
                 <option value="" disabled selected>Please Select</option>
@@ -101,7 +109,7 @@
             </select>
         </div>
 
-        <div class="form-group">
+        <div class="form-isian">
             <label for="isian">Isian *</label>
             <select id="isian" name="isian" required>
                 <option value="" disabled selected>Please Select</option>
@@ -111,32 +119,32 @@
             </select>
         </div>
 
-        <div class="form-group">
+        <div class="form-tema">
             <label for="tema">Tema Kue *</label>
             <input type="text" id="tema" name="tema" placeholder="cth: Lucu, Sekolah, Pedesaan, TFF, Animasi" required>
         </div>
 
-        <div class="form-group">
+        <div class="form-biaya">
             <label for="biaya">Perkiraan Biaya *</label>
             <input type="number" id="biaya" name="biaya" placeholder="Rp." required>
         </div>
 
-        <div class="form-group">
+        <div class="form-lokasi">
             <label for="lokasi">Lokasi Pengiriman (Kabupaten/Kota) *</label>
-            <input type="text" id="lokasi" name="lokasi"placeholder="Alamat Lengkap"  required>
+            <input type="text" id="lokasi" name="lokasi" placeholder="Alamat Lengkap" required>
         </div>
 
-        <div class="form-group">
+        <div class="form-gambar">
             <label for="gambar">Tambah Gambar (Desain/Model)</label>
             <input type="file" id="gambar" name="gambar">
         </div>
 
-        <div class="form-group">
+        <div class="form-informasi">
             <label for="info-tambahan">Informasi Tambahan</label>
             <textarea id="info-tambahan" name="info-tambahan" rows="4" placeholder="Catatan Khusus"></textarea>
         </div>
 
-        <div class="form-group">
+        <div class="form-saran">
             <label>Apakah Anda ingin kami memberikan saran desain tambahan berdasarkan tema Anda?</label>
             <input type="radio" id="saran-ya" name="saran" value="ya">
             <label for="saran-ya">Ya</label>
@@ -148,5 +156,17 @@
         <button type="button" onclick="window.print()">Cetak Formulir</button>
     </form>
 
+    <div class="thank-you-message" id="thankYouMessage">
+        Terimakasih Atas Pemesanan Kuenya!
+    </div>
+
+    <script>
+        // Mencegah pengiriman formulir dan menampilkan pesan terima kasih
+        document.getElementById('orderForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Mencegah pengiriman formulir
+            document.getElementById('thankYouMessage').style.display = 'block'; // Menampilkan pesan terima kasih
+        });
+    </script>
+
 </body>
-</html>
+                </html>
