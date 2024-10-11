@@ -8,9 +8,9 @@
         body {
             font-family: Arial, sans-serif;
             background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTL6iRk7_Le_1lNEoFlC3iDn6Tnk504OVpYFrTg5CoiAfT4B_nUE6Hz44o&s=1');
-            background-size: cover; /* Mengatur gambar agar menutupi seluruh layar */
-            background-position: center; /* Memposisikan gambar di tengah */
-            background-repeat: no-repeat; /* Menghindari pengulangan gambar */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             color: white;
             padding: 20px;
         }
@@ -19,17 +19,17 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: rgba(0, 0, 0, 0.6); /* Latar belakang transparan di belakang header */
+            background-color: rgba(0, 0, 0, 0.6);
             padding: 10px;
             border-radius: 10px;
             margin-bottom: 20px;
         }
 
         .logo {
-            width: 80px; /* Ukuran logo */
-            height: 80px; /* Ukuran logo */
-            border-radius: 50%; /* Membuat logo berbentuk lingkaran */
-            object-fit: cover; /* Memastikan gambar sesuai dalam lingkaran */
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
         }
 
         form {
@@ -63,13 +63,13 @@
         .radio-group {
             display: flex;
             align-items: center;
-            gap: 20px; /* Memberi jarak antara label radio */
+            gap: 20px;
         }
 
-         .radio-group label {
+        .radio-group label {
             display: flex;
             align-items: center;
-            gap: 5px; /* Memberi jarak antara input radio dan teks */
+            gap: 5px;
             margin: 0;
         }
 
@@ -109,8 +109,7 @@
 
     <p>Jelaskan kue keinginan Anda dan kami akan membuatkannya.</p>
     
-     <form id="orderForm" action="#" method="POST" enctype="multipart/form-data">
-    
+    <form id="orderForm" action="Ucapan Selamat.html" method="get">
         <div class="form-nama">
             <label for="nama">Nama Anda *</label>
             <input type="text" id="nama" name="nama" placeholder="Nama Lengkap" required>
@@ -186,17 +185,17 @@
             <textarea id="info-tambahan" name="info-tambahan" rows="4" placeholder="Catatan Khusus"></textarea>
         </div>
 
-            <div class="form-saran">
+        <div class="form-saran">
             <label>Apakah Anda ingin kami memberikan saran desain tambahan berdasarkan tema Anda?</label>
             <div class="radio-group">
-                <label> <input type="radio" name="saran" value="ya"> Ya </label>
-                <label> <input type="radio" name="saran" value="tidak"> Tidak </label>
+                <label><input type="radio" name="saran" value="ya"> Ya</label>
+                <label><input type="radio" name="saran" value="tidak"> Tidak</label>
             </div>
         </div>
 
-        <button type="submit" onclick="window.location.href='Ucapan Selamat.html'">Kirim Formulir</button>
+        <button type="submit">Kirim Formulir</button>
         <button type="button" onclick="window.print()">Cetak Formulir</button>
     </form>
-    
+
 </body>
-    </html>
+</html>
